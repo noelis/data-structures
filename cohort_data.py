@@ -194,8 +194,15 @@ def find_cohort_by_student_name(student_list):
     student's cohort, or returns "Student not found." when appropriate. """
 
     # Code goes here
+    # let user input a student name
+    student_search = raw_input("Which student would you like to find more information about? (Please enter in first and last name.) ")
 
-    return "Student not found."
+    for info in student_list:
+        if info[0] == student_search:
+            return info[-1]
+    # if student name is not in list return error message
+        else:
+            return "Student not found. Sorry. :("
 
 
 ##########################################################################################
@@ -255,6 +262,6 @@ print sort_by_cohort("cohort_data.txt")
 print students_by_house("cohort_data.txt")
 all_students_data = all_students_tuple_list("cohort_data.txt")
 print all_students_data
-# find_cohort_by_student_name(all_students_data)
+print find_cohort_by_student_name(all_students_data)
 # print find_name_duplicates("cohort_data.txt")
 # find_house_members_by_student_name(all_students_data)
